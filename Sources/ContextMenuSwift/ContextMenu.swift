@@ -82,6 +82,13 @@ public class ContextMenuConstants {
     
     public var DismissOnItemTap : Bool = false
     public var horizontalDirection: HorizontalDirection = .left
+
+    init() {
+        if #available(iOS 13.0, *) {
+            LabelDefaultColor = UIColor.label.withAlphaComponent(0.95)
+            ItemDefaultColor = UIColor.systemBackground.withAlphaComponent(0.5)
+        }
+    }
 }
 
 open class ContextMenu: NSObject {
